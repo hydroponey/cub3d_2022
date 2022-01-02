@@ -6,10 +6,11 @@
 /*   By: asimoes <asimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 08:05:17 by asimoes           #+#    #+#             */
-/*   Updated: 2022/01/02 10:27:44 by asimoes          ###   ########.fr       */
+/*   Updated: 2022/01/02 13:18:03 by asimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "cub3d.h"
 
 void	raycasting_1(int x, t_ray *ray, t_conf *conf)
@@ -75,8 +76,8 @@ void	raycasting_3(t_ray *ray, t_conf *conf)
 	else
 		ray->perp_wall_dist = (ray->mapy - conf->posy + (1 - ray->stepy) / 2)
 			/ ray->diry;
-	if (ray->perp_wall_dist == 0)
-		ray->perp_wall_dist = 1;
+	if (ray->perp_wall_dist < 10e-7)
+		ray->perp_wall_dist = 1.;
 }
 
 void	draw_texture(t_conf *conf, t_ray *ray, int x)
