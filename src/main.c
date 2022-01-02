@@ -6,7 +6,7 @@
 /*   By: asimoes <asimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 23:37:18 by asimoes           #+#    #+#             */
-/*   Updated: 2022/01/02 04:58:24 by asimoes          ###   ########.fr       */
+/*   Updated: 2022/01/02 05:51:49 by asimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 	check_args(argc, argv, &conf);
 	check_config(argv[1], &conf);
 	init_game(&conf);
-	conf.window = mlx_new_window(conf.mlx, conf.resx, conf.resy, "Cub3D");
+	conf.window = mlx_new_window(conf.mlx, conf.resx, conf.resy, "cub3D");
 	if (conf.window == NULL)
 		exit_error("mlx_new_window failed", &conf);
 	draw_walls(&conf);
