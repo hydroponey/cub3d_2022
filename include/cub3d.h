@@ -6,7 +6,7 @@
 /*   By: asimoes <asimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 18:44:48 by asimoes           #+#    #+#             */
-/*   Updated: 2022/01/02 10:27:53 by asimoes          ###   ########.fr       */
+/*   Updated: 2022/01/02 13:28:25 by asimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,6 @@ typedef struct s_conf {
 	void		*window;
 	void		*img;
 	int			*img_data;
-	void		*img2;
-	int			*img_data2;
 	int			img_bpp;
 	int			resx;
 	int			resy;
