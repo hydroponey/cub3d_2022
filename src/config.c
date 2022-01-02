@@ -6,13 +6,23 @@
 /*   By: asimoes <asimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 10:41:09 by asimoes           #+#    #+#             */
-/*   Updated: 2022/01/02 05:15:40 by asimoes          ###   ########.fr       */
+/*   Updated: 2022/01/02 09:36:35 by asimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "get_next_line/get_next_line.h"
 #include "cub3d.h"
+
+void	set_params_headers(char **params)
+{
+	params[0] = "NO ";
+	params[1] = "SO ";
+	params[2] = "WE ";
+	params[3] = "EA ";
+	params[4] = "F ";
+	params[5] = "C ";
+}
 
 void	error_double_param(int param, char *line, t_conf *conf)
 {
@@ -81,7 +91,7 @@ int	check_params(char **params, t_conf *conf)
 	int		params_read;
 
 	params_read = 0;
-	ft_bzero(&double_check, sizeof(int) * 6);
+	ft_bzero(double_check, sizeof(int) * 6);
 	ret = get_next_line(conf->fd, &line);
 	while (ret >= 0)
 	{
@@ -97,14 +107,4 @@ int	check_params(char **params, t_conf *conf)
 	if (params_read != 6)
 		return (1);
 	return (0);
-}
-
-void	set_params_headers(char **params)
-{
-	params[0] = "NO ";
-	params[1] = "SO ";
-	params[2] = "WE ";
-	params[3] = "EA ";
-	params[4] = "F ";
-	params[5] = "C ";
 }

@@ -6,7 +6,7 @@
 /*   By: asimoes <asimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 08:05:17 by asimoes           #+#    #+#             */
-/*   Updated: 2022/01/02 04:02:19 by asimoes          ###   ########.fr       */
+/*   Updated: 2022/01/02 10:27:44 by asimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ void	raycasting_1(int x, t_ray *ray, t_conf *conf)
 	ray->delta_disty = sqrt(1 + (ray->dirx * ray->dirx)
 			/ (ray->diry * ray->diry));
 	ray->hit = 0;
+}
+
+void	raycasting_2(t_ray *ray, t_conf *conf)
+{
 	if (ray->dirx < 0)
 	{
 		ray->stepx = -1;
@@ -34,10 +38,6 @@ void	raycasting_1(int x, t_ray *ray, t_conf *conf)
 		ray->stepx = 1;
 		ray->side_distx = (ray->mapx + 1.0 - conf->posx) * ray->delta_distx;
 	}
-}
-
-void	raycasting_2(t_ray *ray, t_conf *conf)
-{
 	if (ray->diry < 0)
 	{
 		ray->stepy = -1;

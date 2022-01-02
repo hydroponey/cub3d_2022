@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   config2.c                                          :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asimoes <asimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 15:51:28 by asimoes           #+#    #+#             */
-/*   Updated: 2022/01/02 05:12:33 by asimoes          ###   ########.fr       */
+/*   Updated: 2022/01/02 09:20:20 by asimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	check_args(int argc, char *argv[], t_conf *conf)
 
 	if (argc != 2)
 		exit_error("Wrong number of arguments", conf);
-	if (ft_strlen(argv[1]) < 5)
+	if (ft_strlen(argv[1]) < 4)
 		exit_error("Invalid map file name", conf);
 	if (ft_strncmp(&argv[1][ft_strlen(argv[1]) - 4], ".cub", 4) != 0)
 		exit_error("Invalid map file name", conf);

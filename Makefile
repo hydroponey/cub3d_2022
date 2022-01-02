@@ -6,7 +6,7 @@
 #    By: asimoes <asimoes@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/11 16:41:09 by asimoes           #+#    #+#              #
-#    Updated: 2022/01/02 04:57:52 by asimoes          ###   ########.fr        #
+#    Updated: 2022/01/02 09:16:28 by asimoes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS=\
 	src/check_map.c \
 	src/check_map2.c \
 	src/config.c \
-	src/config2.c \
+	src/check.c \
 	src/draw_walls_utils.c \
 	src/draw_walls.c \
 	src/free.c \
