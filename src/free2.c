@@ -6,7 +6,7 @@
 /*   By: asimoes <asimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 04:58:00 by asimoes           #+#    #+#             */
-/*   Updated: 2022/01/02 04:59:13 by asimoes          ###   ########.fr       */
+/*   Updated: 2022/01/02 13:48:46 by asimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ void	free_config(t_conf *conf)
 			free(conf->text_map[i]);
 		i++;
 	}
-	free(conf->map);
-	free(conf->text_map);
+	if (conf->map)
+		free(conf->map);
+	if (conf->text_map)
+		free(conf->text_map);
 	if (conf->mlx != NULL)
 	{
 		mlx_destroy_display(conf->mlx);

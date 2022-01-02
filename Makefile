@@ -6,7 +6,7 @@
 #    By: asimoes <asimoes@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/11 16:41:09 by asimoes           #+#    #+#              #
-#    Updated: 2022/01/02 09:16:28 by asimoes          ###   ########.fr        #
+#    Updated: 2022/01/02 13:52:11 by asimoes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,13 +59,14 @@ else
 	CLIBS += -L. -lmlx -framework OpenGL -framework AppKit
 endif
 
+%.o:		%.c $(DEPS)
+			$(CC) $(CFLAGS) -c $< -o $@
+
 all:		$(NAME)
 
 $(NAME):	$(OBJS) $(LIBMLX) $(LIBFT)
 			$(CC) $(CFLAGS) $(OBJS) $(CLIBS) -o $@
 
-%.o:		%.c $(DEPS)
-			$(CC) $(CFLAGS) -c $< -o $@
 $(LIBFT):	
 			$(MAKE) -C libft
 ifeq ($(UNAME),Darwin)
